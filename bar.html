@@ -1,0 +1,166 @@
+<div dir="ltr" lang="en" class="navfilter centerFlex">
+    <a class="logo" style="display:flex; align-items:center" href="https://clicspy.com/login">
+        <img id="logo" src="chrome-extension://cligbpkbgligiphjiopdpfngfegolnfk/images/newlogo.png" alt="clicspy.com">
+    </a>
+    <div class="rangeinput centerFlex divblock">
+
+        <label for="adsnumber" style="font-family:'Montserrat', sans-serif;"># Ads:</label>
+        <input id="adsnumber" type="range" style="width:130px" value="0" min="0" max="40">
+        <output id="rangevalue">OFF</output>
+
+
+    </div>
+
+
+    <div class="centerFlex divblock" style="display:none !important">
+        <label for="enableFilter" style="font-family:'Montserrat', sans-serif;">FILTRO</label>
+
+    </div>
+
+
+    <div class="centerFlex divblock">
+
+
+        <!--<img src="chrome-extension://cligbpkbgligiphjiopdpfngfegolnfk/images/rocket%20svg.svg" class="control-icon inactive" id='rocket' alt="">-->
+
+    </div>
+
+
+    <div class="centerFlex divblock">
+
+
+        <!--<img src="chrome-extension://cligbpkbgligiphjiopdpfngfegolnfk/images/robot%20svg.svg"  class="control-icon inactive" id='robot' alt="">-->
+
+    </div>
+
+
+    <div class="centerFlex divblock">
+        <label for="enableScroll" style="font-family:'Montserrat', sans-serif;">Scroll</label>
+        <input class="toggle" type="checkbox" id="enableScroll" name="toggle-lib-scroll">
+
+
+    </div>
+
+
+
+
+    <div class="centerFlex divblock newFilter" id="selectStatus">
+
+
+        <label for="selectStatus"
+            style="text-overflow: ellipsis; white-space: nowrap;
+              overflow: hidden;font-family:'Montserrat';cursor: pointer;  color:black;font-size:10px !important">
+            Activos e inactivos
+        </label>
+
+        <img src="chrome-extension://cligbpkbgligiphjiopdpfngfegolnfk/images/icons8-menu.svg" style="display:none">
+
+    </div>
+
+
+
+    <div class="divblock countryFilter" id="selectCountry">
+
+
+        <label style="display:none">Pais</label>
+
+        <label for="selectCountry" style="font-family:'Montserrat', sans-serif;">
+
+            <span class="flag-icon"><img
+                    src="chrome-extension://cligbpkbgligiphjiopdpfngfegolnfk/flags/globe.svg"></span>
+
+        </label>
+        <span style="font-size:10px;font-weight:bold;font-family:sans-serif;" class="country-name"
+            id="country_name">Todos los paises</span>
+        <img style="display:none" src="chrome-extension://cligbpkbgligiphjiopdpfngfegolnfk/images/country-menu.svg"
+            id="selectCountry">
+
+    </div>
+
+
+
+    <div class="centerFlex divblock languageBlock" id="selectLanguage">
+
+        <img src="chrome-extension://cligbpkbgligiphjiopdpfngfegolnfk/images/language-icon.svg" class="language-icon">
+        <label for="selectMediaType"
+            style="font-family:'Montserrat',sans-serif; cursor: pointer;  color:black;font-size:10px !important">
+            Idioma
+        </label>
+
+
+    </div>
+
+
+
+    <div class="centerFlex divblock mediaTypeBlock" id="selectMediaType">
+
+
+        <label for="selectMediaType"
+            style=" text-overflow: ellipsis;white-space: nowrap;
+          overflow: hidden; font-family:'Montserrat', sans-serif; cursor: pointer;  color:black;font-size:10px !important">
+            Todos los Contenidos
+        </label>
+
+
+    </div>
+
+
+    <div class="centerFlex divblock plateformBlock" id="selectplateform">
+
+
+        <label for="selectplateform"
+            style="text-overflow: ellipsis;white-space: nowrap; overflow: hidden; font-family:'Montserrat';cursor: pointer; sans-serif; color:black;font-size:10px !important">Todas las
+            URL</label>
+
+
+    </div>
+
+
+
+
+
+    <div class="date-picker">
+
+        <input type="date" id="from_date" undefined=""
+            style="width:60px;border:0px;background-color:white;padding-left:3px;padding-right:3px; border-radius:10px;height:20px;font-size:9px">
+    </div>
+
+
+    <div class="date-picker">
+
+        <input type="date" id="to_date" undefined=""
+            style="width:60px;border:0px;background-color:white;padding-left:3px;padding-right:3px; border-radius:10px;height:20px;font-size:9px">
+    </div>
+
+
+
+
+    <div class="centerFlex divblock" style="display:none !important">
+        <label for="all-months" style="font-family:'Montserrat', sans-serif;">
+            MESES</label>
+        <input class="toggle" type="checkbox" id="all-months">
+    </div>
+
+
+    <div class="centerFlex divblock">
+        <div style="display:none">
+            <label title="removes hidden ads and boosts page speed" for="removehidden">Remove hidden</label>
+            <input class="toggle" type="checkbox" id="removehidden">
+        </div>
+    </div>
+    <div class="centerFlex divblock">
+
+        <button id="panel" style="margin-right:10px">
+
+
+            Panel
+        </button>
+
+
+
+    </div>
+    <img src="chrome-extension://cligbpkbgligiphjiopdpfngfegolnfk/images/up_arrow.png" id="scrollToTopBtn"
+        class="up_arrow">
+
+
+</div>

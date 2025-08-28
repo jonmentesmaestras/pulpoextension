@@ -1,0 +1,100 @@
+
+
+.select-box {
+    width: 250px !important;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.select-box input {
+    width: 95%;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    color: black !important;
+    border: .1rem solid transparent;
+    outline: none;
+    padding: 10px;
+ 
+}
+
+[data-icon="fa:globe"] path{
+    fill: #474849;
+}
+
+[for=selectCountry] svg{
+   margin-right: 3px;
+}
+
+
+.select-box .options {
+    width: 100%;
+    background-color: #fff;
+    border-radius: .5rem;
+    border: 1px solid #11235A !important;
+    display: none;
+}
+
+.select-box .options.active {
+    display: block;
+}
+
+
+input.search-box {
+    color:black;
+    border:1.5px solid rgb(187, 186, 186);
+    width:90%;
+     margin-left:1px;
+     margin-top:2px;
+}
+input.search-box::placeholder{
+    color:rgb(141, 140, 140);
+    font-size: 12px;
+    
+}
+
+.select-box ol {
+    list-style: none;
+    padding:0 !important;
+    
+    height: 23rem;
+    overflow: overlay;
+}
+.select-box ol li{
+    padding-left: 0;
+}
+
+
+.select-box ol::-webkit-scrollbar {
+    width: 0.6rem;
+    background-color:  #f2f1f1;
+}
+
+
+.select-box ol::-webkit-scrollbar-thumb {
+    width: 0.4rem;
+    height: 3rem;
+    background-color:rgb(16, 230, 254);
+    border-radius: .4rem;
+}
+
+.select-box ol li {
+    padding: .5rem;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.select-box ol li.hide {
+    display: none;
+}
+
+.select-box ol li:not(:last-child) {
+    border-bottom: .1rem solid #eee;
+}
+
+.select-box ol li:hover {
+    background-color: lightcyan;
+}
+.option{
+    color: #1c1e21;
+}

@@ -1,0 +1,316 @@
+/* Define the background gradient */
+.mylogin-div {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to right, #000000, #0a0a0a, #000022);
+}
+
+/* Define the logo style */
+.logo {
+  width: 385px;
+  height: 166px;
+  margin: 0 auto;
+}
+.mininglogo {
+  width: 346px;
+  height: 148px;
+  margin: 35px;
+}
+
+/* Define the greeting style */
+.greeting {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+}
+.greeting2 {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  text-align: center;
+}
+.greeting3 {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+
+/* Define error text messages  style */
+.errorMsgText,
+.trialExpiredMsgText,
+.subscriptionInactiveMsgText {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  color: #0db0fa;
+  margin: 0;
+  text-align: left;
+  margin-left: 18px;
+  font-size: medium;
+}
+
+.errorMsgText a {
+  color: #0db0fa;
+  font-weight: bold;
+}
+
+.welcomeMsgText {
+  color: rgb(255, 255, 255);
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  text-align: center;
+}
+
+.trialMsgText {
+  color: rgb(255, 255, 255);
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  text-align: center;
+}
+
+/* Define the form style */
+.mylogin-form {
+  width: 350px;
+  margin: auto;
+  border: 2px solid #040a0c;
+  border-radius: 11px;
+  background: #030c1a;
+  padding: 5px;
+}
+
+/* Define the input style */
+.email-input-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.email-input {
+  padding-left: 2.5rem !important;
+}
+
+.email-icon {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  left: 28px;
+  top: 49.6%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* Password eye toggle wrapper */
+.password-input-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.password-input {
+  padding-right: 44px; /* room for the eye button */
+}
+
+.toggle-password {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: #c7c9ce;
+  cursor: pointer;
+  padding: 0;
+}
+
+.toggle-password:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(138, 180, 255, 0.2);
+}
+
+.toggle-password .icon-eye-off { display: none; }
+.toggle-password[aria-pressed="true"] .icon-eye { display: none; }
+.toggle-password[aria-pressed="true"] .icon-eye-off { display: inline; }
+
+.mylogin-input {
+  width: 300px;
+  border-radius: 13px;
+  height: 30px;
+  margin: 15px;
+  border: 1px solid black;
+  padding: 0 16px;
+}
+
+.mylogin-input:focus {
+  outline: none;
+  border: 3px solid yellow;
+  box-shadow: 0 0 10px yellow;
+}
+
+/* Define the button style */
+.mylogin-button {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+
+  cursor: pointer;
+  width: 250px;
+  height: 40px;
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 14px;
+  background: #0db0fb;
+  color: rgb(227, 223, 237);
+}
+
+/* Add to login.css */
+.circ-progress {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+.circ-progress svg {
+  animation: rotate 2s linear infinite;
+}
+.circ-progress circle {
+  stroke: #0db0fa;
+  stroke-linecap: round;
+  animation: dash 1.5s ease-in-out infinite;
+}
+@keyframes rotate {
+  100% { transform: rotate(360deg); }
+}
+@keyframes dash {
+  0% { stroke-dasharray: 1, 150; stroke-dashoffset: 0; }
+  50% { stroke-dasharray: 90, 150; stroke-dashoffset: -35; }
+  100% { stroke-dasharray: 90, 150; stroke-dashoffset: -124; }
+}
+
+/* =============================
+   Login mockup specific styles
+   (scoped to #login to avoid affecting other screens)
+   ============================= */
+.mylogin-div#login {
+  background: #000000; /* solid black per mockup */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 24px;
+}
+
+/* Apply the same visual style to the post-login form toggle screen */
+.mylogin-div#form-toggle {
+  background: #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 24px;
+}
+
+#form-toggle .mylogin-form {
+  width: 360px;
+  margin: 8px auto 0 auto;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+#form-toggle .mylogin-button {
+  width: 320px;
+  height: 44px;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #000000;
+  font-weight: 700;
+}
+
+#form-toggle label[for="toggle-lib"] {
+  display: inline-block;
+  margin-left: 0;
+}
+
+#form-toggle #lib-toggle {
+  margin-left: 0;
+}
+
+#login .mylogin-form {
+  width: 360px;
+  margin: 8px auto 0 auto;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+#login .mylogin-input {
+  width: 320px;
+  height: 44px;
+  margin: 10px 0;
+  border-radius: 12px;
+  background: #0f1013;
+  border: 1px solid #d4d3d3;
+  color: #ffffff;
+}
+
+#login .mylogin-input::placeholder {
+  color: #cacaca;
+}
+
+#login .mylogin-input:focus {
+  outline: none;
+  border: 1px solid #8ab4ff;
+  box-shadow: 0 0 0 3px rgba(138, 180, 255, 0.15);
+}
+
+#login .row-helpers {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 320px;
+  margin: 6px auto 10px auto;
+}
+
+#login .link-forgot {
+  background: transparent;
+  border: none;
+  color: #c6c8cc;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 12px;
+  padding: 0;
+}
+
+#login .remember {
+  color: #e9eaed;
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+#login .remember input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  accent-color: #ffffff;
+}
+
+#login .mylogin-button {
+  width: 320px;
+  height: 44px;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #000000;
+  font-weight: 700;
+}
