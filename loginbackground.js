@@ -6,7 +6,7 @@ async function flip_user_status(signIn, user_info) {
 
     if (signIn) {
         try {
-            const response = await fetch('https://nodeapi.tueducaciondigital.site/login', {
+            const response = await fetch('https://nodeapi.tueducaciondigital.site/pulpologin', {
                 method: 'GET',
                 headers: {
                     'Authorization': 'Basic ' + btoa(`${user_info.email}:${user_info.pass}`),

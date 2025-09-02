@@ -140,7 +140,7 @@ document.getElementById("panel").onclick = function () {
   chrome.runtime.sendMessage({ type: "getToken" }, (res) => {
     if (res?.token) {
       window.open(
-        `https://clicspy.com/dashboard?token=${res?.token}`,
+        `https://app.pulpoia.com/?token=${res?.token}`,
         "_blank"
       );
     } else {

@@ -179,7 +179,7 @@ let CTA = undefined;
   let logall = !1;
   let ad_status_value = undefined;
   const div = document.createElement("div");
-  const myhost = "https://clicspy.com/login";
+  const myhost = "https://app.pulpoia.com/login";
   
   (async function () {
     function e(e) {
@@ -2191,7 +2191,7 @@ let CTA = undefined;
                 chrome.runtime.sendMessage({ type: "getToken" }, (res) => {
                   if (res?.token) {
                     window.open(
-                      `https://clicspy.com/dashboard?token=${res?.token}`,
+                      `https://app.pulpoia.com/?token=${res?.token}`,
                       "_blank"
                     );
                   } else {

@@ -118,13 +118,13 @@ chrome.webNavigation.onCommitted.addListener((details) => {
   url: [{schemes: ['http', 'https']}]
 });
 
-chrome.runtime.onInstalled.addListener(function (e) {
+/*chrome.runtime.onInstalled.addListener(function (e) {
   if ("install" == e.reason) {
     chrome.tabs.create({ url: urlWhenInstall });
   } else if ("update" == e.reason) {
     chrome.tabs.create({ url: urlWhenUpdate });
   }
-}),
+}),*/
   // chrome.runtime.setUninstallURL(host + "/adspy/chrome.php?uninstall=1"),
   chrome.runtime.onMessage.addListener(function (e, o, t) {
     //return "hello" == e.greeting && checkUserLogin(e, o, t), !0;
