@@ -2194,6 +2194,10 @@ let CTA = undefined;
                       `https://app.pulpoia.com/?token=${res?.token}`,
                       "_blank"
                     );
+                    /*window.open(
+                      `http://localhost:3000/?token=${res?.token}`,
+                      "_blank"
+                    );*/                    
                   } else {
                     // alert("Por favor, inicia sesión para abrir el Panel")
                     showSignInMessagePopup();
@@ -3335,7 +3339,7 @@ function hideLoader(target){
 
         // EXCEDIO LA CAPACIDAD DE CATEGORIAS
         if(response.status === 400){
-          showPopup("Has alcanzado el límite de categorías permitidas para tu plan. Contactanos a soporte@clicspy.com", true)
+          showPopup("Has alcanzado el límite de categorías permitidas para tu plan. Contactanos a soporte@pulpoia.com", true)
           return ""
         }
         throw new Error("Network response was not ok");

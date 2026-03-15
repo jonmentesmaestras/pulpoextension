@@ -693,31 +693,6 @@ $(document).on("click", ".btn-show-more", function () {
             console.log("response is", response.error);
 
             if (response.error === false) {
-              // --- INICIO MODIFICACIÓN: INTERCEPTAR MIGRACIÓN ---
-              if (response.migration_needed) {
-                if (progressBar) progressBar.style.display = "none";
-                if (loginBtn) loginBtn.disabled = false;
-
-                // 1. Ocultar Login
-                document.getElementById("login").style.display = "none";
-                
-                // 2. Llenar datos del Muro
-                const userName = response.customerInfo?.Nombre || response.customerInfo?.Email || "Usuario";
-                document.getElementById("mig-user-name").innerText = userName;
-                
-                // 3. Mostrar Muro
-                document.getElementById("migration-wall").style.display = "block";
-                
-                // 4. Configurar el botón de reactivación
-                // Guardamos el email en el botón para usarlo después
-                document.getElementById("btn-reactivate").onclick = function() {
-                    startMigrationProcess(response.customerInfo.Email);
-                };
-                
-                return; // IMPORTANTE: Detenemos la ejecución aquí
-              }
-              // --- FIN MODIFICACIÓN ---
-                              
             // Hide progress bar on success
               if (progressBar) progressBar.style.display = "none";
               if (loginBtn) loginBtn.disabled = false;              
@@ -814,48 +789,6 @@ $(document).on("click", ".btn-show-more", function () {
         );
       }
     });
-
- /**
- * Lógica para procesar la migración desde la extensión
- */
-async function startMigrationProcess(email) {
-  const btn = document.getElementById("btn-reactivate");
-  const errorLabel = document.getElementById("mig-error-msg");
-  
-  btn.disabled = true;
-  btn.innerText = "Generando enlace...";
-  errorLabel.style.display = "none";
-
-  try {
-    // Usamos el mismo endpoint que en la web app
-    // NOTA: Cambia /hookstest por /hooks cuando pases a producción
-    const response = await fetch("https://nodeapi.tueducaciondigital.site/hookstest/create-migration-session", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ email: email })
-    });
-
-    const data = await response.json();
-
-    if (data.url) {
-      // Abrir Stripe en una nueva pestaña
-      chrome.tabs.create({ url: data.url });
-      // Opcional: Cerrar el popup o mostrar mensaje de "Pestaña abierta"
-      window.close(); 
-    } else {
-      throw new Error(data.error || "No se recibió URL de pago");
-    }
-
-  } catch (error) {
-    console.error("Error migración:", error);
-    btn.disabled = false;
-    btn.innerText = "Reintentar";
-    errorLabel.innerText = "Error: " + error.message;
-    errorLabel.style.display = "block";
-  }
-}   
 
 // (async () => {
 //   const { loggedIn } = await chrome.storage.sync.get("loggedIn")

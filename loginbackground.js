@@ -7,6 +7,7 @@ async function flip_user_status(signIn, user_info) {
     if (signIn) {
         try {
             const response = await fetch('https://nodeapi.tueducaciondigital.site/pulpologin', {
+            //const response = await fetch('http://localhost:3002/pulpologin', {                
                 method: 'GET',
                 headers: {
                     'Authorization': 'Basic ' + btoa(`${user_info.email}:${user_info.pass}`),
@@ -31,31 +32,36 @@ async function flip_user_status(signIn, user_info) {
                 if (res.error) {
 
                     resolve(res);
-
-                } else {
-                    console.log(user_info);
-
+                } 
+                // --- NUEVO BLOQUE: DETECCIÓN DE MIGRACIÓN ---
+                else if (res.migration_needed) {
+                    console.log("Migración requerida para: ", user_info.email);
+                    // NO guardamos sesión, solo devolvemos la info al popup para mostrar el muro
+                    resolve(res); 
+                } 
+                // --- FIN NUEVO BLOQUE ---
+                else {
+                    // Login Exitoso Normal
                     chrome.storage.session.set({ 
                         userStatus: true, 
-                        view: "form", email: user_info.email, token: res.token,
-                        Nombre: res.customerInfo.Nombre, Message:res.customerInfo.Message, 
-                        RemainingDays: res.RemainingDays }, function () {
-                        // Check if there was an error
-                        if (chrome.runtime.lastError) resolve('fail')
+                        view: "form", 
+                        email: user_info.email, 
+                        token: res.token,
+                        Nombre: res.customerInfo.Nombre, 
+                        Message: res.customerInfo.Message, 
+                        RemainingDays: res.RemainingDays 
+                    }, function () {
+                        if (chrome.runtime.lastError) resolve('fail');
 
-                        user_signed_in = true
+                        user_signed_in = true;
                         console.log('local storage is set successfully');
-                        console.log(res);
-                        resolve(res)
-
-
-                    })
-
+                        resolve(res);
+                    });
                 }
-
-            })
+            });
         } catch (err) {
-            return console.log("could not get the host " + err)
+            console.log("could not get the host " + err);
+            return { error: true, message: "Error de conexión con el servidor" };
         }
     }
 }

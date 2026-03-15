@@ -463,7 +463,7 @@ async function sendRequest(data, token, message) {
         //excedio la capacidad de anuncios
         if(response.status === 403){
          
-          return { error: true, message: responseDat.message + ". Contáctanos a soporte@clicspy.com" };    
+          return { error: true, message: responseDat.message + ". Contáctanos a soporte@pulpoia.com" };    
         }
 
         console.log("error 400");

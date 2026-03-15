@@ -19,7 +19,7 @@
 
   <div class="mylogin-div" id="login" style="display: none">
     <div style="display: grid; place-items: center">
-  <img src="./../images/logo-form-extension.jpg" width="288" height="86" alt="Logo"
+  <img src="./../images/logo-form-extension.png" width="288" height="86" alt="Logo"
         style="margin-top: 1%; margin-left: 8px; margin-bottom: 2px" />
     </div>
     <!-- Add the greeting message -->
@@ -87,11 +87,35 @@
     
   </div>
 
+  <!-- migration wall -->
+  <div id="migration-wall" class="mylogin-div" style="display: none; text-align: center; padding: 10px;">
+    <div style="display: grid; place-items: center">
+      <img src="./../images/logo-form-extension.png" width="200" alt="Logo" style="margin-top: 10px; margin-bottom: 20px;" />
+    </div>
+
+    <div style="background-color: #fff3cd; color: #856404; padding: 15px; border-radius: 8px; border: 1px solid #ffeeba; margin-bottom: 20px;">
+      <h3 style="margin-top: 0; font-size: 16px;">⚠️ Actualización Requerida</h3>
+      <p style="font-size: 14px; margin: 10px 0;">Hola <b id="mig-user-name">Usuario</b>,</p>
+      <p style="font-size: 13px; line-height: 1.4;">
+        Hemos actualizado nuestra plataforma de pagos por seguridad. Tu suscripción requiere una reactivación rápida.
+      </p>
+      <p style="font-size: 13px; font-weight: bold; margin-top: 10px;">
+        Hemos conservado tus días restantes. No se te cobrará nada hoy.
+      </p>
+    </div>
+
+    <button id="btn-reactivate" class="mylogin-button" style="background-color: #28a745; width: 100%; font-size: 16px;">
+      Reactivar Suscripción Ahora
+    </button>
+    
+    <p id="mig-error-msg" style="color: #ff6b6b; display: none; margin-top: 10px; font-size: 12px;"></p>
+  </div>
+
   <!-- forgot password form -->
 
   <div id="form-forgot-password" class="mylogin-div" style="display: none">
     <div style="display: grid; place-items: center">
-      <img src="./../images/logo-form-extension.jpg" width="288" height="86" alt="Logo"
+      <img src="./../images/logo-form-extension.png" width="288" height="86" alt="Logo"
         style="margin-top: 1%; margin-left: 8px; margin-bottom: 2px" />
     </div>
 
@@ -173,7 +197,7 @@
   <!-- email sent -->
   <div id="email-sent-screen" class="mylogin-div" style="display: none">
     <div style="display: grid; place-items: center">
-      <img src="./../images/logo-form-extension.jpg" width="288" height="86" alt="Logo"
+      <img src="./../images/logo-form-extension.png" width="288" height="86" alt="Logo"
         style="margin-top: 5%; margin-left: 8px; margin-bottom: 12px" />
     </div>
     <div style="
@@ -208,7 +232,7 @@
   <!-- THE EXTRACT FORM-->
   <div class="mylogin-div" id="form-toggle" style="display: none">
     <div style="display: grid; place-items: center">
-      <img src="./../images/logo-form-extension.jpg" width="288" height="86" alt="Logo"
+      <img src="./../images/logo-form-extension.png" width="288" height="86" alt="Logo"
         style="margin-top: 1%; margin-left: 8px; margin-bottom: 2px" />
     </div>
 
