@@ -170,7 +170,7 @@ document.getElementById("library").onclick = function () {
 };
 
 //forgot password request
-const urlForgot = "https://nodeapi.tueducaciondigital.site/forgotPassword";
+const urlForgot = "https://pulpoia-ops.com/backend/nodeapi/forgotPassword";
 async function forgotPassword() {
   console.log("forget password clicked to go to " + urlForgot);
   document.getElementById("invalid-mail").style.display = "none";
@@ -690,6 +690,24 @@ $(document).on("click", ".btn-show-more", function () {
         chrome.runtime.sendMessage(
           { message: "login", payload: { email, pass } },
           function (response) {
+            if (chrome.runtime.lastError) {
+              console.log("login runtime error", chrome.runtime.lastError);
+              if (progressBar) progressBar.style.display = "none";
+              if (loginBtn) loginBtn.disabled = false;
+              errorMsg.innerHTML = "No se pudo completar el inicio de sesión. Inténtalo de nuevo.";
+              errorMsg.style.display = "block";
+              return;
+            }
+
+            if (!response || typeof response !== "object") {
+              console.log("login response inválida", response);
+              if (progressBar) progressBar.style.display = "none";
+              if (loginBtn) loginBtn.disabled = false;
+              errorMsg.innerHTML = "Respuesta inválida del servidor. Inténtalo de nuevo.";
+              errorMsg.style.display = "block";
+              return;
+            }
+
             console.log("response is", response.error);
 
             if (response.error === false) {
@@ -807,7 +825,7 @@ $(document).on("click", ".btn-show-more", function () {
                 if (progressBar) progressBar.style.display = "none";
                 if (loginBtn) loginBtn.disabled = false;
 
-              errorMsg.innerHTML = response.message;
+              errorMsg.innerHTML = response.message || "No se pudo iniciar sesión.";
               errorMsg.style.display = "block";
             }
           }
@@ -829,7 +847,7 @@ async function startMigrationProcess(email) {
   try {
     // Usamos el mismo endpoint que en la web app
     // NOTA: Cambia /hookstest por /hooks cuando pases a producción
-    const response = await fetch("https://nodeapi.tueducaciondigital.site/hookstest/create-migration-session", {
+    const response = await fetch("https://pulpoia-ops.com/backend/nodeapi/hookstest/create-migration-session", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

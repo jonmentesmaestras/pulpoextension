@@ -3318,7 +3318,7 @@ function hideLoader(target){
   }
 
   async function postCategory(categoryName) {
-    const apiUrl = "https://nodeapi.tueducaciondigital.site/usercategory";
+    const apiUrl = "https://pulpoia-ops.com/backend/nodeapi/usercategory";
     const myToken = await chrome.runtime.sendMessage({ type: "getToken" });
     console.log(myToken);
     const requestBody = {
@@ -3359,7 +3359,7 @@ function hideLoader(target){
     try {
       
       const response = await fetch(
-        `https://nodeapi.tueducaciondigital.site/usercategory`,
+        `https://pulpoia-ops.com/backend/nodeapi/usercategory`,
         
         {
           method: "GET",

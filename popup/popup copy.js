@@ -170,7 +170,7 @@ document.getElementById("library").onclick = function () {
 };
 
 //forgot password request
-const urlForgot = "https://nodeapi.tueducaciondigital.site/forgotPassword";
+const urlForgot = "https://pulpoia-ops.com/backend/nodeapi/forgotPassword";
 async function forgotPassword() {
   console.log("forget password clicked to go to " + urlForgot);
   document.getElementById("invalid-mail").style.display = "none";

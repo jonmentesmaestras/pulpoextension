@@ -131,12 +131,13 @@ chrome.webNavigation.onCommitted.addListener((details) => {
   });
 
 let imagesBase64Urls = [];
-chrome.runtime.onMessage.addListener(async function (
+chrome.runtime.onMessage.addListener(function (
   request,
   sender,
   sendResponse
 ) {
-  console.log(request);
+  (async () => {
+    console.log(request);
 
   if (request.msg === "download") {
     console.log(request.url);
@@ -185,7 +186,7 @@ chrome.runtime.onMessage.addListener(async function (
       const resourceUrl = urlEncoded;
       try {
         const response = await fetch(
-          "https://nodeapi.tueducaciondigital.site/download?url=" + resourceUrl
+          "https://pulpoia-ops.com/backend/nodeapi/download?url=" + resourceUrl
         );
         const blob = await response.blob();
   
@@ -236,6 +237,9 @@ chrome.runtime.onMessage.addListener(async function (
       }
     })
   }
+  })().catch((error) => {
+    console.log("background message handler error", error);
+  });
 });
 
 // Example of a simple user data object
@@ -441,9 +445,9 @@ async function sendRequest(data, token, message) {
   console.log("the data is", data);
   console.log("the token is", token);
 
-  let endPoint = "https://nodeapi.tueducaciondigital.site/dashboard";
+  let endPoint = "https://pulpoia-ops.com/backend/nodeapi/dashboard";
   if (message == "sendBulk") {
-    endPoint = "https://nodeapi.tueducaciondigital.site/bulk";
+    endPoint = "https://pulpoia-ops.com/backend/nodeapi/bulk";
   }
   try {
     const response = await fetch(endPoint, {
